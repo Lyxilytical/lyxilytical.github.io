@@ -135,8 +135,62 @@
         <p>
             (the art quality slowly gets worse as i stop trying to get bogged down in presentation again lol)
         </p>
-        <img src="images/cafe/concept_service.png" height="700px">
-
+        <img src="images/cafe/concept_service.png" height="750px">
+        <p>
+            as you can see from this image, the game was gonna have around 18 ingredients from which you could make multiple types of "products", depending on what you put on the menu and what the customer asked for <br>
+            i have two versions of the cattocafe godot project, this first "unfinished prototype" and a later one
+        </p>
+        <video height="500px" controls>
+            <source src="videos/cafe.mp4" type="video/mp4">
+        </video>
+        <p>what products you can even put on the menu depends on what ingredients you have, which you would buy from a shop after the "day" ended with the money you made from the cafe (this wasn't implemented yet in this prototype, so this was tested via changing the save file lol)</p>
+        <img src="images/cafe/ingre.png" height="400px">
+        <img src="images/cafe/sell.png" height="400px">
+        <p>i did need a surprising amount of code for defining what products needed what resources, as well as accounting for alternatives in the recipes, not to mention i have to spawn the appliances/tools you need</p>
+        <img src="images/cafe/recp.png" height="450px">
+        <img src="images/cafe/products.png" height="300px">
+        <p>as i said, the appliances/tools you needed for each product you're selling that day (you can only sell 4 at a time) would automatically spawn, meanwhile you were intended to drag the ingredients from the left side (none of them had logos lol)</p>
+        <img src="images/cafe/full.png" height="400px">
+        <img src="images/cafe/appliances.png" height="400px">
+        <img src="images/cafe/appliancesfolder.png" height="400px">
+        <p>"tool" script, this would be things such as the mug or the masher in the screenshot, which could be dragged around the workspace</p>
+        <img src="images/cafe/tool.png" height="500px">
+        <p>the reason this "prototype" was left unfinished is mostly because i knew what i wanted at this rate and felt like reconstructing everything for the sake of making it nicer to work with, thus why i dubbed it "the prototype"</p>
+        <h3>version 2</h3>
+        <video height="500px" controls>
+            <source src="videos/cafev2.mp4" type="video/mp4">
+        </video>
+        <p>i'll explain why this version is <i>even more</i> unfinished in a moment, but let's go over the changes</p>
+        <img src="images/cafe/concept_new.png" height="400px" width="700px">
+        <p>the "workspace" was given way more screen real estate, and i added a menu on the right from where you would drag out your ingredients, appliances, and tools (which you would all get from the shop now (which also actually exists in this version, even if you can't get to it without the console i made)), aswell as a "cookbook" that would explain all the recipes in the game</p>
+        <p>you can also see i opted for 3 shelves like in the og version instead of the 4 in the concept drawing lol</p>
+        <img src="images/cafe/v2editor.png" height="350px">
+        <p>all the things you have bought from the shop are saved in the save file, and this time ingredients are also stored as resources (like the plant/zombie info files that you can edit from pvz dmsm!)</p>
+        <img src="images/cafe/goods.png" height="300px">
+        <img src="images/cafe/ingrefiles.png" height="300px">
+        <img src="images/cafe/apples.png" height="300px">
+        <p>"day unlock" references a mechanic i planned to add where you wouldn't have access to all the ingredients/appliances in the shop immediately, and would instead unlock more options from the shop over time</p>
+        <h3>why did i stop working on it?</h3>
+        <p>you've probably been wondering this for a good minute now, considering the fact that the scope of this game was pretty small and it was a simple cosy cafe game, why didn't i finish it and release this as my first game? well...</p>
+        <br>
+        <p>the game isn't fun</p>
+        <br>
+        <p>
+            let me tell you something i've been keeping secret this entire time: the "shop" phase of the game was originally completely different, where instead of buying ingredients, you would <i>scavange</i> for them in a rougelike type minigame, creating a gameplay loop sorta similar to something like cult of the lamb (despite the fact that i never really got far in cotl lol) <br>
+            the problem with this entire concept was that it made the scope kinda damn ambiguous as the rougelike part of this game was not a developed idea gameplay-wise at all, the concept simply being "the cafe is nice and cosy, but it's actually a post-apocalypse outside"
+        </p>
+        <p>
+            for quite awhile i didn't want to scrap the scavange phase due to the themeing, but eventually i convinced myself it'd be for the best
+        </p>
+        <img src="images/cafe/discord.png" height="450px">
+        <p>
+            there was then something else i realised when i replaced the scavange phase with the shop, that being that the cafe phase is not really interesting at all, as i had said, it's literally "dragging things onto other things" <br>
+            this is why after implementing the shop in v2 i abandoned it so quick, as i realised that i really didn't like the <i>gameplay</i> of this <i>game,</i> which pretty much made me lose all interest in continuing to work on the game
+        </p>
+        <p>
+            even if part of my brain was telling me that "every small game dev's first game is flawed, and you need to put something out there already", my total lack of motivation still made it pretty hard to continue as i felt like there was no point in making a game that wasn't fun
+        </p>
+        <img src="images/cafe/discord2.png" height="100px">
     
 
         <br>
