@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../../stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>the hall of unfinished coding projects</title>
+    </head>
+
+    <body>
+        <h1>the hall of unfinished coding projects</h1>
+        <p>smth i realised at some point is since i haven't really finished/released anything as of now, the game projects n such that i've worked on are fairly unknown apart from the little i share on twitter and in private discord servers n all that</p>
+        <p>
+            that changes with this page! <br>
+            here i will share any unfinished projects i have made to make sure they are not lost to time (and to also actually prove that i know how to code in case i wanna use this page in that manner lol) <br>
+        </p>
+        <p>
+            throughout 2021-2023 i messed with learning how to code/using game engines a lot and made a bunch of projects where i just tested random things before i tried to make any of these "actual" games <br>
+            if you're wondering about engines, all of these were made in godot <br>
+            i've messed with unity for the sake of learning and i've thought of using it for certain ideas but i haven't really had a good enough excuse to do so yet
+        </p>
+        <p>i might add to this at some point, but most of my other "unfinished projects" are mostly just ideas that i threw out before i made anything substantial for them</p>
+        <br>
+
+        <h2>Plants vs. Zombies: Dimensional Smoothie</h2>
+        <img src="logos/dimensional_smoothie.png" height="300px">
+        <h4>last worked on 10th of october, 2023</h4>
+        
+        <p>
+            as far as i can recall, this is the first major game project that i ever attempted to create, this being a fangame for plants vs zombies <br>
+            anything i tried to make is not really meaningful enough for me to still remember/have saved on my pc lol <br>
+        </p>
+        <h3>the concept</h3>
+        <p>
+            while i could go into every little idea i had for pvz dmsm, for the purposes of this being a basic overview and getting to the stuff im more interested in (the code), i'll provide the basic ideas i had for it <br>
+            <br>
+            ✨dimensions✨(i am, and was, very aware of pvz dimensional destruction's existence, but i have not seem them do anything with the gimmick lol) <br>
+            each world in pvz dmsm takes place within a dimension - these worlds are fantanstical in a similar way to pvz2's time travel theme, but do things that pvz2 couldn't<br>
+            <br>
+            the exact list of ideas/worlds changed a lot, but some of the ones that stuck around a lot were: <br>
+            <ul>
+                <li><b>"post-apocalypse"</b> - really just think of fallout, or that one rick and morty episode i guess</li> 
+                <li><b>pixel/computer</b> - was stuck between a dimension that was inspired by snes pixel art or existed on a 90's/2000's computer (which i had more ideas for) and it would've been weird to do both lol</li>
+                <li><b>"zomboss takeover"</b> - the look for this dimension would've been super inspired by the doof dimension in phineas and ferb across the 2nd dimension </li>
+                <li><b>"toybox"/figures</b> - all of the plants and zombies are action figures that exist on a game board on some kid's table</li>
+                <li><b>"dimensional smoothie"/doomsday</b> - all of the dimensions clashing, obviously being derivative of pvz2's modern day (except with a better lawn/theme than just "pvz1 house")</li>
+            </ul>
+        </p>
+        <h3>the code</h3>
+        <p>for the sake of having somewhere to start, this is the basic test level i worked on when implementing all the mechanics</p>
+        <video height="500px" controls>
+            <source src="videos/overview.mp4" type="video/mp4">
+        </video>
+        <h4>the plants</h4>
+        <p>plants have to be made in this specific folder structure in order for everything to work properly, and have an easily editable resource file in order to edit any common attributes</p>
+        <img src="images/dmsm/folders.png" height="350px">
+        <img src="images/dmsm/plant info.png" height="400px">
+        <br>
+        (the code for that resource class)
+        <br>
+        <img src="images/dmsm/plantinfocode.png" height="400px">
+        <p>for clarification, the "slot" option describes whether the plant behaves like a pot/lily pad, or a pumpkin - i figured this was kinda important to implement early since it would result in up to 3 plants being on top of each other</p>
+        <img src="images/dmsm/slots.png" height="125px">
+        <img src="images/dmsm/slotnplantable.png" height="100px">
+        <p>
+            most of the other attributes are pretty self explantory if you know how pvz works, but there is one other thing to the plants - animations (obviously) <br>
+            with the way that i handled animations, they were stored in a seperate scene from the plant for the sake of being able to instance them in not only the plant, but also when the player is "holding" the plant, or in the "mini almanac"
+        </p>
+        <img src="images/dmsm/plant.png" height="250px">
+        <img src="images/dmsm/holdingplant.png" height="250px">
+        <img src="images/dmsm/mini.png" height="250px">
+
+        <p>speaking of the plant scenes, all plants inheret from a single "common" plant that basically has all the functionality you need for a basic plant</p>
+        <img src="images/dmsm/plantscene.png" height="300px"> <br>
+        <img src="images/dmsm/plantscript1.png" height="500px">
+        <img src="images/dmsm/plantscrip2.png" height="350px">
+        <p>point is, this makes code for sunflower and peashooter simple as hell</p>
+        <img src="images/dmsm/sunflowerscript.png" height="500px">
+        <img src="images/dmsm/peashooterscript.png" height="400px">
+        <p>and due to how plants and tiles are coded, pumpkin and lily pad don't need much code at all apart from setting certain parameters</p>
+        <img src="images/dmsm/pumpkin.png" height="250px">
+        <img src="images/dmsm/lilypad2.png" height="250px">
+        <img src="images/dmsm/lilypad.png" height="100px">
+        <br>
+        <h4>water tiles? where?</h4>
+        <p>while not being shown in the level video, tiles have a few things going on with them</p>
+        <img src="images/dmsm/tile.png" height="200px">
+        <img src="images/dmsm/water.png" height="200px">
+        <p>i did make the admittedly bizarre decision to place tiles manually (for the sake of being easy to edit?), which is improved on later, but for now we're stuck with level templates lol</p>
+        <img src="images/dmsm/tiles.png" height="250px">
+        <img src="images/dmsm/templates.png" height="100px">
+        <p>not gonna bother showing all the tile code, so here's just the code for different plants on a tile and them being visually ordered</p>
+        <img src="images/dmsm/tilecode.png" height="400px">
+        <br><br><br>
+        <p>zombies are pretty basic/unfinished (as you saw by the arm particle just kinda floating in the video lol), and they're pretty similar to the plants in how they're stored</p>
+        <img src="images/dmsm/zombiefolder.png" height="200px">
+        <p>the most interesting thing about them by far is the testing i did for in-engine animation and using texture atlases, but that's about it</p>
+        <img src="images/dmsm/zombieanim.png" height="450px">
+
+        <h4>other level code stuff</h4>
+        <p>the level script is the 2nd longest/most complicated script i made for this project, as it handled various things such as menu buttons, sun, tiles, etc</p>
+        <img src="images/dmsm/levelscript.png" height="450px">
+        <img src="images/dmsm/levelscript2.png" height="200px">
+        <p>but it turns out that the longest script in the game is the seed packet handler that is under it lol</p>
+        <img src="images/dmsm/seedpacketcode.png" height="500px">
+
+        <p>there's a lot more i can get into when it comes to the code, with little specific things getting kinda complicated like the structure of the "mini almanac" or the code behind placing a plant, but i think it's time to move onto..</p>
+
+        <h3>why did i stop working on it?</h3>
+        <p>there was sort of a loss of motivation to continue working on it, and i feel like the main reason was because i was making progress way too slowly due to focusing on the presentation of what was essentially a prototype</p>
+        <p>i spent way too much time on testing plant/zombie animations, making a little spinning save icon for when the game saves your settings, or perhaps the best example, the entire splash sequence, despite the fact that all of this had literally no art made for it lol</p>
+        <video height="500px" controls>
+            <source src="videos/title.mp4" type="video/mp4">
+        </video>
+        <p>there wasn't really enough attention being paid to continuing to implement all the basics and just what the hell i wanted in terms of mechanics and new things for this game, so yeah, this project was pretty much doomed from the start</p>
+        <p>that being said, a project that aims way too high and doesn't have much focus on game content is a pretty common learning experience for most game devs, so hey, i don't think it was a totally negative experience</p>
+
+
+        <br>
+        <br>
+
+
+        <h2>cattocafe</h2>
+        <img src="logos/cattocafe.png" height="300px"> <br>
+        <h4>last worked on 8th of november, 2023</h4>
+
+        <p>
+            (this one didn't really have any sort of wip logo lol)
+        </p>
+        <p>
+            cattocafe was a pretty basic concept inspired by papa's pizzeria (a flash game), being a bit less ambiguous in scope <br>
+            i've been a bit obsessed with the idea of making a pvz fangame for awhile (you'll be seeing another one later), but i figured cattocafe would be a nice first (original) game to make <br>
+            especially considering the fact that the game was dead simple, consisting of basically just dragging things onto other things and then giving that to a customer
+        </p>
+        <p>
+            (the art quality slowly gets worse as i stop trying to get bogged down in presentation again lol)
+        </p>
+        <img src="images/cafe/concept_service.png" height="700px">
+
+    
+
+        <br>
+        <br>
+
+
+        <h2>Plants vs. Zombies: Everfruit</h2>
+        <img src="logos/everfruit.jpg" height="300px"> <br>
+        <h4>last worked on 11th of april, 2024</h4>
+
+        <p>
+            i'll finish this later
+        </p>
+    </body>
+
+</html>

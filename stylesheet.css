@@ -1,0 +1,21 @@
+html {
+    background-color: rgb(222, 205, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(131, 28, 228);
+    font-size: large;
+}
+
+a {
+    color:  rgb(255, 20, 184);
+}
+
+highlight {
+    color: rgb(216, 35, 223);
+}
+
+.blog {
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border: 7px solid rgb(131, 28, 228);
+}
