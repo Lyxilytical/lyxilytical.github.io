@@ -37,7 +37,6 @@
             as far as i can recall, this is the first major game project that i ever attempted to create, this being a fangame for plants vs zombies <br>
             anything i tried to make is not really meaningful enough for me to still remember/have saved on my pc lol <br>
         </p>
-        <h3>the concept</h3>
         <p>
             while i could go into every little idea i had for pvz dmsm, for the purposes of this being a basic overview and getting to the stuff im more interested in (the code), i'll provide the basic ideas i had for it <br>
             <br>
@@ -58,7 +57,6 @@
         <video height="500px" controls>
             <source src="videos/overview.mp4" type="video/mp4">
         </video>
-        <h4>the plants</h4>
         <p>plants have to be made in this specific folder structure in order for everything to work properly, and have an easily editable resource file in order to edit any common attributes</p>
         <img src="images/dmsm/folders.png" height="350px">
         <img src="images/dmsm/plant info.png" height="400px">
@@ -110,6 +108,9 @@
         <img src="images/dmsm/levelscript2.png" height="200px">
         <p>but it turns out that the longest script in the game is the seed packet handler that is under it lol</p>
         <img src="images/dmsm/seedpacketcode.png" height="500px">
+
+        <p>last little thing, the level paramaters (the conveyor was left unfinished, but locked plants work just how you would expect)</p>
+        <img src="images/dmsm/leveltype.png" height="600px">
 
         <p>there's a lot more i can get into when it comes to the code, with little specific things getting kinda complicated like the structure of the "mini almanac" or the code behind placing a plant, but i think it's time to move onto..</p>
 
@@ -209,8 +210,89 @@
         <h4>last worked on 11th of april, 2024</h4>
 
         <p>
-            i'll finish this later
+            pvz everfruit is my second major attempt at a pvz fangame, this being a bit more recent and the fate of it being a bit undetermined as of now 
         </p>
+        <p>
+            when i had posted something about dimensional smoothie months back, i had been asked (on either reddit or discord, i cannot remember at all) if i was using some sort of "pvz engine"
+        </p>
+        <p>
+            this idea of a pvz engine randomly popped into my head again and kinda interested me, this idea of some sort of pvz engine people could use to build off of to make fangames
+        </p>
+        <p>
+            i remember fnf's new (user friendly!) chart editor being revealed at some point which i'm pretty sure subconsciously gave me the idea that a pvz engine like this would need some sort of robust level editor, giving you the ability to make zombie waves and placing board gimmicks using a mario-maker style ui <br>
+            but, of course, we need to make some zombies and some board gimmicks that could be used, and from there pvz ef turned into "a bunch of plants, zombies and gimmicks from pvz1/2 rolled into a cool level editor/player, with levels people can share via level files"
+        </p>
+        <p>
+            also, plants/zombies/gimmicks can be added via mods (considering that adding mod support with godot is extremely easy lol)
+        </p>
+        <p>
+            while all of this has a pretty ambiguous scope, the idea formed in my head to aim to add most stuff from pvz1, and then add extra things from pvz2 n such in various updates - whether i do the entirety of pvz2 or not, i still felt like this idea is pretty cool
+        </p>
+        <p>so, lets see what i have made, shall we?</p>
+        <video height="500px" controls>
+            <source src="videos/pvzef.mp4" type="video/mp4">
+        </video>
+        <p>
+            this fairly long clip showcases a variety of things that i figured all needed to be shown in motion <br>
+            first of all, for the sake of testing, i made several different lawns to implement all the board code n such
+        </p>
+        <img src="images/everfruit/lawnpool.png" height="400px">
+        <img src="images/everfruit/lawns.png" height="300px"> <br>
+        <img src="images/everfruit/lawnroof.png" height="420px"> <br>
+        <p>
+            all the custom tiles (pool tiles, roof tiles) are set in a giant array - this is technically the most precise way to do it, but it's fairly cumbersome to add to by hand <br>
+            keep in mind that in the game's level editor you would choose from pre-made lawns like these and add <i>on top of these,</i> so i made a plugin to make these lawns with the godot editor
+        </p>
+        <img src="images/everfruit/lawneditplugin.png" height="175px">
+        <img src="images/everfruit/lawnedit.png" height="175px"> <br>
+        <img src="images/everfruit/lawneditcode.png" height="450px">
+        <p>
+            as you can tell, now tile types are <i>also</i> files - i took this approach with basically everything, to make stuff as modular as possible for the future
+        </p>
+        <img src="images/everfruit/tiletypesfiles.png" height="250px">
+        <p>
+            of course, with how the lawns are stored, the slants and the collision system i'll get to, it makes for some insanely convoluted code that basically constructs the lawn when level starts
+        </p>
+        <img src="images/everfruit/roofshapes.png" height="400px"> <br>
+        <img src="images/everfruit/commentyourcode.png" height="700px">
+        <p>(my code may have been simple enough before to get away with it before, but this is when you wanna comment your code kids)</p>
+        <p>anyways, about that collision system..</p>
+        <img src="images/everfruit/topdownentity.png" height="300px">
+        <p>just about every existing entity on the board, plant, zombie, projectile, inherets from "topdownentity", which has a fair amount of collision code for detecting collisions with objects that.. technically have 3D hitboxes</p>
+        <img src="images/everfruit/entitycode.png" height="600px">
+        <p>i feel like its quite a bit too much to explain, especially with how i had to make a seperate class for "topdownfloor"s considering the existence of slanted tiles (and then having to make 2 big giant floors on either side of the lawn during level construction), but the point of all of it was to emulate the 3D environments going on in pvz1/pvz2 lol</p>
+        <img src="images/everfruit/cabbage.jpg" height="300px">
+        <img src="images/everfruit/pearoof.png" height="250px">
+        <p>moving on, plants and zombies are coded slightly differently but they're not too dissimilar from how they were in pvz dmsm, so i just wanna give you a few quick screenshots to something i didn't pay any attention to in dmsm, seed packets</p>
+        <img src="images/everfruit/seedpacket.png" height="200px">
+        <img src="images/everfruit/withouttop.png" height="200px"> <br>
+        <img src="images/everfruit/packetunit.png" height="250px">
+        <img src="images/everfruit/packetprocess.png" height="300px">
+        <p>something also teased at in the video that i haven't mentioned is the almanac, which is basically meant to be a giant guidebook for new players for not only info on plants/zombies, but also stuff like every board gimmick, using the level editor and info about the game <br>
+        </p>
+        <img src="images/everfruit/almanac_concept.png" height="350px">
+        <p>the questions on the main menu are basically meant to function as "links" to pages in the almanac (these would also be riddled throughout the level editor), but obviously the almanac isn't implemented at this point - either way this thing is meant to be able to slide in ontop of any situation without changing screens for the sake of not disrupting flow</p>
+        <img src="images/everfruit/links.png" height="200px">
+        
+        <h3>why did i stop working on it?</h3>
+        <p>
+            at one point i got a bit tired and took a break from working on pvz ef, and just kinda haven't returned <br>
+            despite the fact that whatever "1.0" version i'm supposed to make is meant to have the clear scope of "just things from pvz1", i still made this kinda ginormous task for myself to make sure EVERYTHING is as easy to expand upon as possible and having to do some insane forward thinking to make sure i don't get into technical debt later on
+        </p>
+        <p>
+            case in point, the weird 3D-in-2D collision system just doesn't feel great to work with and i ended up getting into my own head about just redoing everything, with actual godot 3D collision logic in the background of this 2D presenting game, instead of forcing any people who want to mod the game to understand the strange "depth" variable and floor detection of topdownentity
+        </p>
+        <p>at the end of the day i think i just got scared of continuing to work on pvz ef considering how the strange mentality of "i need to remember i might wanna add more to it in the future" creating a scope that is small now, but can be much bigger later </p>
+            
+        <p>
+            there's a possiblity i could return to it in a few weeks when summer starts, but overall i'm not saying anything about whether or not i will lol <br>
+            either way i hope i find something interesting to work on soon, specifically a pvz related project considering how fun these types of things are to code for me
+        </p>
+        <img src="../../images/donut_spin.gif" height="350">
+        <p>
+            for anyone who read this entire thing (you are insane) thanks for reading! :3
+        </p>
+
     </body>
 
 </html>
