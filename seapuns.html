@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sea puns</title>
+</head>
+<body>
+
+<h2>sea puns</h2>
+
+<textarea id="inputText" rows="5" cols="50" placeholder="Type here..."></textarea>
+<br><br>
+
+<button onclick="replaceText()">Replace</button>
+
+<h3>output</h3>
+<p id="output"></p>
+
+<script>
+  const replacements = {
+    "kill": "krill",
+    "problem": "prawnblem",
+    "help": "kelp",
+    "totally": "turtally",
+    "shitton": "plankton",
+    "crapton": "plankton",
+    "whole ton": "plankton",
+    "moral": "coral",
+    "really": "eely",
+    "consequence": "conchequence",
+    "sure": "shore",
+    "anything": "anyfin",
+    "see": "sea",
+    "will": "whale",
+    "correlate": "coralate",
+    "specific": "pacific",
+    "shit": "shrimp",
+    "mark": "shark",
+
+    "ficient": "fishient",
+    "ficial": "fishal",
+
+    "phis": "fish",
+    "fiss": "fish",
+    "fis": "fish",
+
+    "try": "fry",
+    "crap": "carp",
+    "platonic": "planktonic",
+    "boo": "bou",
+
+    "surgeon": "sturgeon",
+
+    "i'd": "tide",
+    "sale": "sail",
+
+    "badass": "badbass",
+    "holy shit": "holy mackerel",
+    "what do": "water",
+    "what are": "water",
+    "had it": "haddock",
+    "unbelievab": "unbubbleivab",
+    "girl": "gill",
+    "self": "shell",
+    "about": "crabout",
+    "thin": "fin",
+  };
+
+  function replaceText() {
+    let text = document.getElementById("inputText").value;
+
+    for (let key in replacements) {
+      let regex = new RegExp(key, "gi"); // global + case-insensitive
+      text = text.replace(regex, replacements[key]);
+    }
+
+    document.getElementById("output").innerText = text;
+  }
+</script>
+
+</body>
+</html>
